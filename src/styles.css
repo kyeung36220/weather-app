@@ -39,11 +39,181 @@ h1, h2, h3, h4, h5, h6 {
   --day-backgroundColor: linear-gradient(#B1F0F7, #FADA7A);
   --evening-backgroundColor: linear-gradient(#740938, #DE7C7D);
   --night-backgroundColor: linear-gradient(#021526, #03346E);
-  --backgroundColor: var(--night-backgroundColor)
+  --backgroundColor: var(--day-backgroundColor);
+  --textColor : black;
 }
 
 body {
   background-image: var(--backgroundColor);
   height: 100vh;
   overflow: hidden;
+  font-family: "Varela Round";
+  color: var(--textColor);
+}
+
+/* HEADER */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0px;
+}
+
+/* logo */
+#logo {
+  height: 30px;
+  position: absolute;
+  left: 30px;
+}
+
+input {
+  background: transparent;
+  border: none;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+#searchBar {
+  background-color: white;
+  display: flex;
+  width: fit-content;
+  border-radius: 50px;
+  padding: 3px 10px;
+  align-items: center;
+}
+
+#searchBtn {
+  height: 17px;
+  cursor: pointer;
+}
+
+/* slider */
+.switch {
+  position: absolute;
+  right: 30px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "F";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  color: black;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  content: "C";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* CONTENT */
+#content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* title */
+#titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#locationName {
+  font-size: 5.5rem;
+  font-family: "Varela Round";
+  font-weight: bold;
+  color: linear-gradient(#021526, #03346E);
+  line-height: 85px;
+}
+
+#todayDescription {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+/* today weather info */
+#todayWeatherContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#imageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#imageContainer img {
+  height: 600px;
+}
+
+#attribution {
+  font-size: 0.7rem;
+}
+
+#infoContainer {
+  display: flex;
+  width: 60%;
+  gap: 40px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#todayTemp {
+  font-size: 10rem;
+}
+
+#infoSidebar {
+  font-size: 2.5rem;
 }
