@@ -6,6 +6,10 @@
   margin: 0;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -45,10 +49,13 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   background-image: var(--backgroundColor);
-  height: 100vh;
-  overflow: hidden;
   font-family: "Varela Round";
   color: var(--textColor);
+  min-height: 100% !important;
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* HEADER */
